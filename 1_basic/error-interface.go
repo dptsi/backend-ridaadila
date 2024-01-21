@@ -16,5 +16,11 @@ func pembagi(nilai int, pembagi int) (int, error) {
 }
 
 func main() {
-	fmt.Println(pembagi(10, 0))
+	hasil, err := pembagi(10, 0)
+
+	if err == nil {
+		fmt.Println("Hasil ", hasil)
+	} else {
+		fmt.Println("terjadi error: ", err.Error())
+	}
 }

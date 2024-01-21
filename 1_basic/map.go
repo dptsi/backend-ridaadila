@@ -26,4 +26,5 @@ func main() {
 	delete(buku, "judul")
 
 	fmt.Println(buku)
+	fmt.Println(len(buku))
 }

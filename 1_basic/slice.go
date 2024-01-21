@@ -3,60 +3,54 @@ package main
 import "fmt"
 
 func main() {
-	var bulan = [...]string{
-		"Januari",
-		"Februari",
-		"Maret",
-		"April",
-		"Mei",
-		"Juni",
-		"Juli",
-		"Agustus",
-		"September",
-		"Oktober",
-		"November",
-		"Desember",
+	var array = [...]string{
+		"rida", "test", "coba", "lagi",
 	}
 
-	var slice1 = bulan[5:7]
-
+	slice1 := array[1:3]
 	fmt.Println(slice1)
-	fmt.Println(len(slice1))
-	fmt.Println(cap(slice1))
-
-	bulan[5] = "bulan ubah"
-	fmt.Println(slice1)
-	slice1[1] = "Juli ubah"
-	fmt.Println(bulan)
 
 	days := [...]string{
-		"Senin",
-		"Selasa",
-		"Rabu",
-		"Kamis",
-		"Jumat",
-		"Sabtu",
-		"Minggu",
+		"senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu",
 	}
 
-	daySlice1 := days[4:6]
-	daySlice1[0] = "Sabtu baru"
-	daySlice1[1] = "Minggu baru"
+	dayslice1 := days[5:]
+
+	fmt.Println(dayslice1)
+
+	dayslice1[0] = "sabtu baru"
+	dayslice1[1] = "minggu baru"
+
 	fmt.Println(days)
 
-	daysAppend := append(daySlice1, "Tes")
-	daysAppend[0] = "Sabtu baru berubah"
-	fmt.Println(daysAppend)
+	dayslice2 := append(dayslice1, "new days")
+
+	fmt.Println(dayslice2)
 	fmt.Println(days)
 
-	newSlice := make([]string, 2, 5)
-	newSlice[0] = "index 1"
-	newSlice[1] = "index 2"
+	var newSlice []string = make([]string, 2, 5)
+	newSlice[0] = "new slice 0"
+	newSlice[1] = "new slice 1"
+
 	fmt.Println(newSlice)
 	fmt.Println(len(newSlice))
 	fmt.Println(cap(newSlice))
 
-	copySlice := make([]string, len(newSlice), cap(newSlice))
-	copy(copySlice, newSlice)
+	newSlice2 := append(newSlice, "append data")
+	newSlice2[0] = "berubah"
+	fmt.Println(newSlice2)
 	fmt.Println(newSlice)
+
+	fromSlice := days[:]
+	toSlice := make([]string, len(fromSlice), cap(fromSlice))
+
+	copy(toSlice, fromSlice)
+
+	fmt.Println(toSlice)
+
+	iniArray := [...]int{1, 2, 3, 4, 5}
+	iniSlice := []int{1, 2, 3, 4, 5}
+
+	fmt.Println(iniArray)
+	fmt.Println(iniSlice)
 }

@@ -14,7 +14,7 @@ func main() {
 	fmt.Println(nama[2])
 
 	var nilai = [3]int{
-		1, 2, 3,
+		1, 2,
 	}
 
 	fmt.Println(nilai)
@@ -24,4 +24,12 @@ func main() {
 	var kosong [11]string
 
 	fmt.Println(len(kosong))
+
+	var another = [...]string{
+		"rida",
+	}
+
+	fmt.Println(another)
+
+	fmt.Println(len(another))
 }
